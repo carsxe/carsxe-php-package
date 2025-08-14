@@ -1,0 +1,23 @@
+{
+  "name": "carsxe/api",
+  "description": "A powerful, easy-to-use API for vehicle data including specs, market value, license plate decoding, and more.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "CarsxeDeveloper\\Carsxe\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "carsxe developer",
+      "email": "devops@carsxe.com"
+    },
+    {
+      "name": "Omar Walied",
+      "email": "omar.walied@carsxe.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require-dev": {}
+}
