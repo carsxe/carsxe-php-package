@@ -27,6 +27,7 @@ This will automatically download the library and its dependencies into your proj
 To start using the CarsXE API, include Composer's autoloader and create an instance of the `Carsxe` class with your API key:
 
 ```php
+require_once __DIR__ . '/vendor/autoload.php';
 use CarsxeDeveloper\Carsxe\Carsxe;
 
 $API_KEY = 'YOUR_API_KEY';
