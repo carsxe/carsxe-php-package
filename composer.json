@@ -1,5 +1,5 @@
 {
-  "name": "carsxe/api",
+  "name": "carsxe/carsxe",
   "description": "A powerful, easy-to-use API for vehicle data including specs, market value, license plate decoding, and more.",
   "type": "library",
   "license": "MIT",

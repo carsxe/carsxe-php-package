@@ -13,7 +13,7 @@
 Install the CarsXE PHP library using Composer:
 
 ```bash
-composer require carsxe/api
+composer require carsxe/carsxe
 ```
 
 This will automatically download the library and its dependencies into your project.
