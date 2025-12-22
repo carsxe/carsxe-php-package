@@ -258,6 +258,19 @@ $ymm = $carsxe->yearMakeModel(['year' => '2023', 'make' => 'Toyota', 'model' => 
 $obdCode = $carsxe->obdCodesDecoder(['code' => 'P0115']);
 ```
 
+### `lienAndTheft` – Check lien and theft status by VIN
+
+**Required:**
+
+- `vin`
+  **Optional:**
+- None
+  **Example:**
+
+```php
+$lienTheft = $carsxe->lienAndTheft(['vin' => '2C3CDXFG1FH762860']);
+```
+
 ---
 
 ### Notes
