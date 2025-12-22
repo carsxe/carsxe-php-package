@@ -134,4 +134,9 @@ class Carsxe
     {
         return $this->get('obdcodesdecoder', $params);
     }
+
+    public function lienAndTheft(array $params): array
+    {
+        return $this->get('v1/lien-theft', $params);
+    }
 }
