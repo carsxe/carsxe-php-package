@@ -115,6 +115,8 @@ $decodedPlate = $carsxe->plateDecoder(['plate' => '7XER187', 'state' => 'CA', 'c
 **Optional:**
 
 - `state`
+- `mileage`
+- `condition`
 
 **Example:**
 
