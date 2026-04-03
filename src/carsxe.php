@@ -71,6 +71,8 @@ class Carsxe
         return $this->get('images', $params);
     }
 
+    // Required: vin
+    // Optional: state (US state code), mileage (numeric), condition (excellent|clean|average|rough)
     public function marketValue(array $params): array
     {
         return $this->get('v2/marketvalue', $params);

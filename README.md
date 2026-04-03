@@ -121,7 +121,7 @@ $decodedPlate = $carsxe->plateDecoder(['plate' => '7XER187', 'state' => 'CA', 'c
 **Example:**
 
 ```php
-$marketValue = $carsxe->marketValue(['vin' => 'WBAFR7C57CC811956']);
+$marketValue = $carsxe->marketValue(['vin' => 'WBAFR7C57CC811956', 'state' => 'CA', 'mileage' => 50000, 'condition' => 'clean']);
 ```
 
 ---
@@ -265,9 +265,12 @@ $obdCode = $carsxe->obdCodesDecoder(['code' => 'P0115']);
 **Required:**
 
 - `vin`
-  **Optional:**
+
+**Optional:**
+
 - None
-  **Example:**
+
+**Example:**
 
 ```php
 $lienTheft = $carsxe->lienAndTheft(['vin' => '2C3CDXFG1FH762860']);
