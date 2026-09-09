@@ -278,6 +278,244 @@ $lienTheft = $carsxe->lienAndTheft(['vin' => '2C3CDXFG1FH762860']);
 
 ---
 
+### `recallsYmm` – Get safety recall data by year, make, and model
+
+**Required:**
+
+- `year`
+- `make`
+- `model`
+
+**Optional:**
+
+- None
+
+**Example:**
+
+```php
+$recallsYmm = $carsxe->recallsYmm(['year' => '2026', 'make' => 'toyota', 'model' => 'corolla']);
+```
+
+---
+
+### `submitBulkRecallBatch` – Submit many VINs for async recall checking
+
+**Required (at least one):**
+
+- `vins` (array of 17-character VIN strings)
+- `csv` (inline CSV text)
+- `csvUrl` (HTTPS URL to a CSV file)
+
+**Optional:**
+
+- `webhookUrl`
+
+**Example:**
+
+```php
+$batch = $carsxe->submitBulkRecallBatch([
+    'vins' => ['1HGBH41JXMN109186', '5YJSA1E26HF000001', '1C4JJXR64PW696340'],
+    'webhookUrl' => 'https://your-server.com/webhook',
+]);
+```
+
+---
+
+### `getBulkRecallBatchStatus` – Poll a recalls batch job
+
+**Required:**
+
+- `batchId`
+
+**Optional:**
+
+- None
+
+**Example:**
+
+```php
+$status = $carsxe->getBulkRecallBatchStatus(['batchId' => 'brb_mnablbn7_wvbaqv']);
+```
+
+---
+
+### `getBulkRecallBatchResults` – Fetch completed recalls batch results as JSON
+
+**Required:**
+
+- `batchId`
+
+**Optional:**
+
+- None
+
+**Example:**
+
+```php
+$results = $carsxe->getBulkRecallBatchResults(['batchId' => 'brb_mnablbn7_wvbaqv']);
+```
+
+---
+
+### `downloadBulkRecallBatch` / `getBulkRecallBatchDownloadUrl` – Download recalls batch results as CSV
+
+**Required:**
+
+- `batchId`
+
+**Optional:**
+
+- None
+
+**Example:**
+
+```php
+$csv = $carsxe->downloadBulkRecallBatch(['batchId' => 'brb_mnablbn7_wvbaqv']);
+$downloadUrl = $carsxe->getBulkRecallBatchDownloadUrl(['batchId' => 'brb_mnablbn7_wvbaqv']);
+```
+
+---
+
+### `ymmOptions` – Populate year / make / model / variant dropdowns
+
+**Required:**
+
+- None (omit filters to list years)
+
+**Optional:**
+
+- `dimension` (`years` | `makes` | `models` | `trims` | `variants`)
+- `year`
+- `make`
+- `model`
+
+**Example:**
+
+```php
+$years = $carsxe->ymmOptions([]);
+$makes = $carsxe->ymmOptions(['year' => '2026']);
+$models = $carsxe->ymmOptions(['make' => 'Toyota']);
+$variants = $carsxe->ymmOptions(['year' => '2026', 'make' => 'Toyota', 'model' => 'Tacoma']);
+```
+
+---
+
+### `ownershipVin` – Look up registered owner(s) by VIN
+
+Enterprise-only. Billed per matching owner record.
+
+**Required:**
+
+- `vin`
+
+**Optional:**
+
+- `include` (comma-separated: `demographics`, `emails`, `phones`, `vehicle_history`)
+
+**Example:**
+
+```php
+$owners = $carsxe->ownershipVin(['vin' => '1FT8X3BT0BEA61538']);
+```
+
+---
+
+### `ownershipPerson` – Look up a person by name and address
+
+Enterprise-only. Billed per matching record.
+
+**Required:**
+
+- `first_name`
+- `last_name`
+- `address`
+- `zip`
+
+**Optional:**
+
+- `include`
+
+**Example:**
+
+```php
+$person = $carsxe->ownershipPerson([
+    'first_name' => 'John',
+    'last_name' => 'Sample',
+    'address' => '123 Example St',
+    'zip' => '90210',
+]);
+```
+
+---
+
+### `ownershipAddress` – Look up residents at a street address
+
+Enterprise-only. Billed per matching record.
+
+**Required:**
+
+- `address`
+- `zip`
+
+**Optional:**
+
+- `include`
+- `variant` (legacy; prefer `include`)
+
+**Example:**
+
+```php
+$residents = $carsxe->ownershipAddress(['address' => '123 Example St', 'zip' => '90210']);
+```
+
+---
+
+### `ownershipZip` – Search people in a ZIP code
+
+Enterprise-only. Billed per record on the page.
+
+**Required:**
+
+- `zip`
+
+**Optional:**
+
+- `gender`
+- `min_age`
+- `max_age`
+- `income`
+- `page`
+- `limit`
+- `include`
+- `variant` (legacy; prefer `include`)
+
+**Example:**
+
+```php
+$area = $carsxe->ownershipZip(['zip' => '90210', 'gender' => 'f', 'min_age' => 45]);
+```
+
+---
+
+### `usPlateDecoder` – Decode a US license plate (plate, state)
+
+**Required:**
+
+- `plate`
+- `state`
+
+**Optional:**
+
+- `decodeVIN`
+
+**Example:**
+
+```php
+$usPlate = $carsxe->usPlateDecoder(['plate' => 'H37SFS', 'state' => 'NJ', 'decodeVIN' => 'true']);
+```
+
+---
+
 ### Notes
 
 - **Parameter Names**: Use parameter names exactly as shown in this README to avoid errors.
