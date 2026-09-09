@@ -497,25 +497,6 @@ $area = $carsxe->ownershipZip(['zip' => '90210', 'gender' => 'f', 'min_age' => 4
 
 ---
 
-### `usPlateDecoder` – Decode a US license plate (plate, state)
-
-**Required:**
-
-- `plate`
-- `state`
-
-**Optional:**
-
-- `decodeVIN`
-
-**Example:**
-
-```php
-$usPlate = $carsxe->usPlateDecoder(['plate' => 'H37SFS', 'state' => 'NJ', 'decodeVIN' => 'true']);
-```
-
----
-
 ### Notes
 
 - **Parameter Names**: Use parameter names exactly as shown in this README to avoid errors.

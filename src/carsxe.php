@@ -240,11 +240,4 @@ class Carsxe
     {
         return $this->get('v1/ownership/zip', $params);
     }
-
-    // Required: plate, state
-    // Optional: decodeVIN
-    public function usPlateDecoder(array $params): array
-    {
-        return $this->get('v1/us-platedecoder', $params);
-    }
 }
