@@ -3,6 +3,12 @@
   "description": "A powerful, easy-to-use API for vehicle data including specs, market value, license plate decoding, and more.",
   "type": "library",
   "license": "MIT",
+  "homepage": "https://carsxe.com",
+  "support": {
+    "docs": "https://carsxe.com/docs",
+    "issues": "https://github.com/carsxe/carsxe-php-package/issues",
+    "source": "https://github.com/carsxe/carsxe-php-package"
+  },
   "autoload": {
     "psr-4": {
       "CarsxeDeveloper\\Carsxe\\": "src/"

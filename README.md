@@ -1,10 +1,10 @@
 # 🚗 CarsXE API (PHP Library)
 
-**CarsXE** is a powerful and developer-friendly API that gives you instant access to a wide range of vehicle data. From VIN decoding and market value estimation to vehicle history, images, OBD code explanations, and plate recognition, CarsXE provides everything you need to build automotive applications at scale.
+**[CarsXE](https://carsxe.com)** is a powerful and developer-friendly API that gives you instant access to a wide range of vehicle data. From [VIN decoding](https://carsxe.com/vehicle-specifications) and [market value](https://carsxe.com/vehicle-market-value) estimation to [vehicle history](https://carsxe.com/vehicle-history), [images](https://carsxe.com/vehicle-images), OBD code explanations, and [plate recognition](https://carsxe.com/vehicle-plate-decoder), CarsXE provides everything you need to build automotive applications at scale.
 
-🌐 **Website:** [https://api.carsxe.com](https://api.carsxe.com)  
-📄 **Docs:** [https://api.carsxe.com/docs](https://api.carsxe.com/docs)  
-📦 **All Products:** [https://api.carsxe.com/all-products](https://api.carsxe.com/all-products)
+🌐 **Website:** [https://carsxe.com](https://carsxe.com)  
+📄 **Docs:** [https://carsxe.com/docs](https://carsxe.com/docs)  
+📦 **Products:** [History](https://carsxe.com/vehicle-history) · [Plate decoder](https://carsxe.com/vehicle-plate-decoder) · [Specs / VIN](https://carsxe.com/vehicle-specifications) · [International VIN](https://carsxe.com/international-vin-decoder) · [Images](https://carsxe.com/vehicle-images) · [Recalls](https://carsxe.com/vehicle-recalls) · [Market value](https://carsxe.com/vehicle-market-value)
 
 ---
 
@@ -49,7 +49,7 @@ try {
 
 ## Endpoints
 
-### `specs` – Decode VIN & get full vehicle specifications
+### `specs` – Decode VIN & get full [vehicle specifications](https://carsxe.com/vehicle-specifications)
 
 **Required:**
 
@@ -68,7 +68,7 @@ $vehicle = $carsxe->specs(['vin' => 'WBAFR7C57CC811956']);
 
 ---
 
-### `intVinDecoder` – Decode VIN with worldwide support
+### `intVinDecoder` – Decode VIN with [worldwide support](https://carsxe.com/international-vin-decoder)
 
 **Required:**
 
@@ -86,7 +86,7 @@ $intVin = $carsxe->intVinDecoder(['vin' => 'WF0MXXGBWM8R43240']);
 
 ---
 
-### `plateDecoder` – Decode license plate info (plate, country)
+### `plateDecoder` – Decode [license plate](https://carsxe.com/vehicle-plate-decoder) info (plate, country)
 
 **Required:**
 
@@ -106,7 +106,7 @@ $decodedPlate = $carsxe->plateDecoder(['plate' => '7XER187', 'state' => 'CA', 'c
 
 ---
 
-### `marketValue` – Estimate vehicle market value based on VIN
+### `marketValue` – Estimate vehicle [market value](https://carsxe.com/vehicle-market-value) based on VIN
 
 **Required:**
 
@@ -126,7 +126,7 @@ $marketValue = $carsxe->marketValue(['vin' => 'WBAFR7C57CC811956', 'state' => 'C
 
 ---
 
-### `history` – Retrieve vehicle history
+### `history` – Retrieve [vehicle history](https://carsxe.com/vehicle-history)
 
 **Required:**
 
@@ -144,7 +144,7 @@ $history = $carsxe->history(['vin' => 'WBAFR7C57CC811956']);
 
 ---
 
-### `images` – Fetch images by make, model, year, trim
+### `images` – Fetch [images](https://carsxe.com/vehicle-images) by make, model, year, trim
 
 **Required:**
 
@@ -170,7 +170,7 @@ $images = $carsxe->images(['make' => 'BMW', 'model' => 'X5', 'year' => '2019']);
 
 ---
 
-### `recalls` – Get safety recall data for a VIN
+### `recalls` – Get [safety recall](https://carsxe.com/vehicle-recalls) data for a VIN
 
 **Required:**
 
@@ -188,7 +188,7 @@ $recalls = $carsxe->recalls(['vin' => '1C4JJXR64PW696340']);
 
 ---
 
-### `plateImageRecognition` – Read & decode plates from images
+### `plateImageRecognition` – Read & decode [plates](https://carsxe.com/vehicle-plate-decoder) from images
 
 **Required:**
 
@@ -224,7 +224,7 @@ $vinOcr = $carsxe->vinOcr(['upload_url' => 'https://api.carsxe.com/img/apis/plat
 
 ---
 
-### `yearMakeModel` – Query vehicle by year, make, model and trim (optional)
+### `yearMakeModel` – Query [vehicle specs](https://carsxe.com/vehicle-specifications) by year, make, model and trim (optional)
 
 **Required:**
 
@@ -278,7 +278,7 @@ $lienTheft = $carsxe->lienAndTheft(['vin' => '2C3CDXFG1FH762860']);
 
 ---
 
-### `recallsYmm` – Get safety recall data by year, make, and model
+### `recallsYmm` – Get [safety recall](https://carsxe.com/vehicle-recalls) data by year, make, and model
 
 **Required:**
 
@@ -298,7 +298,7 @@ $recallsYmm = $carsxe->recallsYmm(['year' => '2026', 'make' => 'toyota', 'model'
 
 ---
 
-### `submitBulkRecallBatch` – Submit many VINs for async recall checking
+### `submitBulkRecallBatch` – Submit many VINs for async [recall](https://carsxe.com/vehicle-recalls) checking
 
 **Required (at least one):**
 
@@ -321,7 +321,7 @@ $batch = $carsxe->submitBulkRecallBatch([
 
 ---
 
-### `getBulkRecallBatchStatus` – Poll a recalls batch job
+### `getBulkRecallBatchStatus` – Poll a [recalls](https://carsxe.com/vehicle-recalls) batch job
 
 **Required:**
 
@@ -339,7 +339,7 @@ $status = $carsxe->getBulkRecallBatchStatus(['batchId' => 'brb_mnablbn7_wvbaqv']
 
 ---
 
-### `getBulkRecallBatchResults` – Fetch completed recalls batch results as JSON
+### `getBulkRecallBatchResults` – Fetch completed [recalls](https://carsxe.com/vehicle-recalls) batch results as JSON
 
 **Required:**
 
@@ -357,7 +357,7 @@ $results = $carsxe->getBulkRecallBatchResults(['batchId' => 'brb_mnablbn7_wvbaqv
 
 ---
 
-### `downloadBulkRecallBatch` / `getBulkRecallBatchDownloadUrl` – Download recalls batch results as CSV
+### `downloadBulkRecallBatch` / `getBulkRecallBatchDownloadUrl` – Download [recalls](https://carsxe.com/vehicle-recalls) batch results as CSV
 
 **Required:**
 
