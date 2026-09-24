@@ -190,6 +190,8 @@ $recalls = $carsxe->recalls(['vin' => '1C4JJXR64PW696340']);
 
 ### `plateImageRecognition` – Read & decode [plates](https://carsxe.com/vehicle-plate-decoder) from images
 
+<img alt="Sample license plate used in the examples" src="https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public" width="280">
+
 **Required:**
 
 - `upload_url`
@@ -201,7 +203,7 @@ $recalls = $carsxe->recalls(['vin' => '1C4JJXR64PW696340']);
 **Example:**
 
 ```php
-$plateImage = $carsxe->plateImageRecognition(['upload_url' => 'https://api.carsxe.com/img/apis/plate_recognition.JPG']);
+$plateImage = $carsxe->plateImageRecognition(['upload_url' => 'https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public']);
 ```
 
 ---
@@ -219,7 +221,7 @@ $plateImage = $carsxe->plateImageRecognition(['upload_url' => 'https://api.carsx
 **Example:**
 
 ```php
-$vinOcr = $carsxe->vinOcr(['upload_url' => 'https://api.carsxe.com/img/apis/plate_recognition.JPG']);
+$vinOcr = $carsxe->vinOcr(['upload_url' => 'https://imagedelivery.net/moyiiSImjJPI_EZVxNMBBw/f49aed53-d736-4370-f3f4-97418841c800/public']);
 ```
 
 ---
